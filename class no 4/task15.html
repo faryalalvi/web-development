@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      
+<script>
+// 1- write a java script program to sum two no.s
+ function sum (num1 , num2)
+ {
+    let calculatesum=num1+num2
+    console.log (calculatesum)
+    return calculatesum
+ }
+ sum(10,20)
+
+ let numb1=10 , numb2=20
+ let sumnum=numb1+numb2
+ console.log(sumnum)
+
+//  2- writ a javascript program to find the max no in an array 
+function findMax(arr){
+{
+    if(arr==0){console.log("array is empty")}
+}
+let max=arr[0]
+for(let i=1;i<arr.length;i++)
+if(arr[i]>max)
+{
+    max=arr[i]
+}
+return max
+}
+const numbers=[3,5,6,8,2,0,10,12]
+const calculateMax=findMax(numbers)
+console.log("max no is",calculateMax)
+
+// 3- Write a JavaScript function to check if a given string is a palindrome
+//  (reads the same forwards and backwards).
+function isPalindrome(str) {
+    const cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+    let left = 0;
+    let right = cleanedStr.length-1;
+    while(left<right)
+    {
+        if(cleanedStr[left]!==cleanedStr[right])
+        {return false}
+        left++;
+        right--;
+    }
+    return true
+}
+const testStr1 = "A man, a plan, a canal, Panama";
+const testStr2 = "race a car";
+console.log("A man, a plan, a canal, Panama",isPalindrome(testStr1)); // Outputs: true
+console.log("race a car",isPalindrome(testStr2)); // Outputs: false
+
+// 4- write a java script program to reverse the following string
+function reverseString(str) {
+  let charArray = str.split('');
+
+let reversedArray = charArray.reverse();
+
+
+let reversedStr = reversedArray.join('');
+
+return reversedStr;
+}
+
+const originalStr = "Hello, World!";
+const reversedStr = reverseString(originalStr);
+console.log(reversedStr); // Outputs: !dlroW ,olleH
+
+// 5-Write a JavaScript function that takes an array of numbers and
+// returns a new array with only the even numbers.
+function filterEvenNumbers(arr) {
+  return arr.filter(function(num) {
+    return num % 2 === 0;
+  });
+}
+
+// Example usage:
+const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const evenNumbers = filterEvenNumbers(number);
+console.log(evenNumbers); // Outputs: [2, 4, 6, 8, 10]
+
+// 4- factorial
+function factorialIterative(numberr) {
+let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  return result
+}
+
+// Example usage:
+const numberr = 5;
+console.log('Factorial of ',$,{numberr} ,'is', $,factorialIterative(numberr));
+ // Outputs: Factorial of 5 is 120
+
+ //4- Write a JavaScript function to check if a given number is prime.
+function isPrime(num) {
+  if (num <= 1) {
+    return false; 
+  }
+  
+  
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false; 
+    }
+  }
+  
+  return true; 
+}
+
+const Primenumber = 29;
+console.log($,{Primenumber} ,'is prime:', $,isPrime(Primenumber)); // Outputs: 29 is prime: true
+
+
+</script>
+</body>
+</html>
