@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para">paragraph</p>
+    <p class="para">paragraph</p>
+    <p class="para">paragraph</p>
+    <p class="para">paragraph</p>
+    <p class="para">paragraph</p>
+    <script>
+           const para=document.getElementsByClassName('para')
+           for(let i =0 ; i< para.length ;i++)
+           para[i].innerHTML= 'checked'
+        console.log(para[i])
+
+        
+
+        // document.querySelector('.para').innerHTML='heading'
+        // document.querySelectorAll('.para').forEach((e)=>{e.innerHTML='checking'})
+    </script>
+
+</body>
+</html>

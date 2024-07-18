@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+background-color: #444444;
+}
+
+
+.calculator {
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.display {
+    width: 95%;
+    height: 50px;
+    background-color: #d8c7c7;
+    color: #000000;
+    text-align: right;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.btn {
+    background-color: #d8c7c7;
+    color: #000000;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn:hover {
+    background-color: #dddddd;
+}
+
+.operator {
+    background-color: #444444;
+    color: #ffffff;
+}
+
+.equal {
+    grid-column: span 2;
+    background-color: #d56684;
+    color: #ffffff;
+}
+</style>
+<body>
+   
+    <div class="calculator">
+        <input type="text" id="display" class="display" readonly>
+        <div class="buttons">
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="deleteLast()">DEL</button>
+            <button class="btn" onclick="appendCharacter('%')">%</button>
+            <button class="btn operator" onclick="appendCharacter('/')">/</button>
+            
+            <button class="btn" onclick="appendCharacter('7')">7</button>
+            <button class="btn" onclick="appendCharacter('8')">8</button>
+            <button class="btn" onclick="appendCharacter('9')">9</button>
+            <button class="btn operator" onclick="appendCharacter('*')">*</button>
+            
+            <button class="btn" onclick="appendCharacter('4')">4</button>
+            <button class="btn" onclick="appendCharacter('5')">5</button>
+            <button class="btn" onclick="appendCharacter('6')">6</button>
+            <button class="btn operator" onclick="appendCharacter('-')">-</button>
+            
+            <button class="btn" onclick="appendCharacter('1')">1</button>
+            <button class="btn" onclick="appendCharacter('2')">2</button>
+            <button class="btn" onclick="appendCharacter('3')">3</button>
+            <button class="btn operator" onclick="appendCharacter('+')">+</button>
+            
+            <button class="btn" onclick="appendCharacter('0')">0</button>
+            <button class="btn" onclick="appendCharacter('.')">.</button>
+            <button class="btn equal" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+    <script>
+        function clearDisplay() {
+    document.getElementById('display').value = '';
+}
+
+function deleteLast() {
+    let display = document.getElementById('display');
+    display.value = display.value.slice(0, -1);
+}
+
+function appendCharacter(character) {
+    let display = document.getElementById('display');
+    display.value += character;
+}
+
+function calculateResult() {
+    let display = document.getElementById('display');
+    try {
+        display.value = eval(display.value);
+    } catch {
+        display.value = 'Error';
+    }
+}
+
+    </script>
+</body>
+</html>

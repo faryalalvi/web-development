@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 18</title>
+</head>
+<body>
+    <script>
+        const car = 
+        {
+         make : "toyota",
+         model : "corolla",
+         year :2010
+        }
+
+        console.log(car.make);
+        console.log(car.model);
+        console.log(car.year);
+
+        for (let property in car) {
+        console.log(`${property}: ${car[property]}`)}
+
+        const cars = [
+     { make: "Toyota", model: "Corolla", year: 2010 },
+     { make: "Honda", model: "Civic", year: 2015 },
+     { make: "Ford", model: "Focus", year: 2018 }]
+     
+     cars.forEach(car => {
+     console.log(`Make: ${car.make}, Model: ${car.model}, Year: ${car.year}`);
+     });
+
+
+     const person = {
+     name: "John Doe",
+     age: 30,
+     address: {
+        street: "123 Main St",
+        city: "Anytown",
+        state: "CA",
+        zip: "12345"
+     }
+     };
+     console.log(person)
+
+     car.describe = function() {
+     return `This car is a ${this.year} ${this.make} ${this.model}.`;
+     }
+
+     
+     console.log(car.describe())
+
+     function Person(name, age, street, city, state, zip) {
+      this.name = name;
+     this.age = age;
+     this.address = {
+        street: street,
+        city: city,
+        state: state,
+        zip: zip
+     };
+     } 
+
+     const person1 = new Person("Jane Doe", 28, "456 Elm St", "Othertown", "NY", "67890");
+     console.log(person1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAYNIGHT</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+   
+   body{
+  height: 100vh;
+}
+
+body{
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: lantiquewhite;
+ transition: background-color.9s;
+}
+
+input[type="checkbox"]{
+
+ -webkit-appearance: none;
+ outline: none;
+ position: relative;
+ width: 200px;
+ height: 100px;
+ background-image: url("morning4.jpg");
+ background-size: cover;
+ border-radius: 50px;
+ transition: background-image.9s;
+ box-shadow: 0pz 2px 5px 1px gray;
+}
+input[type="checkbox"]:before{
+ content:"";
+ width: 100px;
+ height: 100px;
+ background-color: rgb(244,189,33);
+ border-radius: 50%;
+ position: absolute;
+ top: 0;
+ left: 0;
+ transition: all .9s;
+ background-color: rgba(244, 189, 33);
+}
+input[type="checkbox"]:checked{
+ background-image: url("night9.jpg");
+} 
+input[type="checkbox"]:checked:before{
+ transform: translate(100%);
+ background-color: rgb(29, 29, 30);
+}
+</style>
+<body>
+    <h1 id="heading1">Day</h1> 
+    <input onclick="check()" type="checkbox" id="myCheck">
+    <h1 id="heading2">Night</h1>
+       
+    
+    <script>
+        function check() {
+
+        var check = document.getElementById('myCheck');
+        var body = document.getElementsByTagName('body')[0];
+        var h1 = document.getElementById('heading1');
+        var h2 = document.getElementById('heading2');
+
+       if (check.checked) {
+     body.style.backgroundColor = 'black';
+     h1.style.color = 'white';
+     h2.style.color = 'white';
+
+} else {
+     body.style.backgroundColor = 'white';
+     h1.style.color = 'black';
+     h2.style.color = 'black';
+     }
+
+     }
+    </script>
+</body>
+</html>

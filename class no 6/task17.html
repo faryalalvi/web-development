@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 Check if an Element is Present in an Arrayusing JavaScript ?
+        const array0 = [1,2,3,4,5]
+        const elementtocheck = 3
+        
+        let isPresent = false;
+        for (let i = 0; i < array0.length; i++)
+         {
+        if (array0[i] === elementtocheck)
+         {
+            isPresent = true;
+         }
+        }
+
+
+        // 2 JavaScript Program to Swap First and Last Elements in an Array ?
+        function swapfirstandlast (array)
+        {
+            if (array.length > 1)
+            { var temp = array[0]
+                array[0]=array[array.length-1]
+                array[array.length] = temp
+            }
+            return array;
+        }
+        var array = [1, 2, 3, 4, 5];
+        console.log("Original array:", array);
+
+        var swappedArray = swapfirstandlast(array);
+        console.log("Array after swapping:", swappedArray);
+
+
+        // 3 JavaScript Program to Delete Middle Elemen from an Array ?
+        function deleteMiddleElement(array) {
+    const length = array.length;
+    
+    // If the array is empty or has only one element, return it as is
+    if (length === 0 || length === 1) {
+        return array;
+    }
+    
+    // Calculate the index of the middle element
+    const middleIndex = Math.floor(length / 2);
+    
+    // Remove the middle element using splice
+    array.splice(middleIndex, 1);
+    
+    return array;
+}
+
+// Example usage
+let array1 = [1, 2, 3, 4, 5];
+console.log("Original array:", array1);
+
+let modifiedArray1 = deleteMiddleElement(array1);
+console.log("Array after deleting middle element:", modifiedArray1);
+
+let array2 = [1, 2, 3, 4, 5, 6];
+console.log("Original array:", array2);
+
+let modifiedArray2 = deleteMiddleElement(array2);
+console.log("Array after deleting middle element:", modifiedArray2);
+
+
+
+// 4 Copy Array Items into Another Array in JavaScript:
+const originalArray = [1, 2, 3, 4, 5];
+const copiedArray = originalArray.slice();
+
+console.log(copiedArray); // Output: [1, 2, 3, 4, 5]
+
+const originalArray1 = [1, 2, 3, 4, 5];
+const copiedArray1 = [...originalArray];
+
+console.log(copiedArray); // Output: [1, 2, 3, 4, 5]
+
+
+// 5 Create Array of Integers Between Two Numbers Inclusive in JavaScript:
+// For example if i say only between (2,6) then my array show like that [2, 3, 4, 5, 6]
+function createRange(start, end) {
+    // Create an array with the specified range
+    let array2 = [];
+    for (let i = start; i <= end; i++) {
+        array2.push(i);
+    }
+    return array2;
+}
+
+// Example usage
+const start = 2;
+const end = 6;
+const rangeArray = createRange(start, end);
+
+console.log(rangeArray);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="1st no." id="1st"> 
+    <br>
+    <input type="number" placeholder="2nd no." id="2nd">
+    <br>
+    <select name="" id="operators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+    </select>
+    <br>
+    <button onclick="converter()">converter</button>
+    <br>
+    <input type="number" name="result" placeholder="result" id="output">
+    <script>
+        function converter(){
+            const first = parseInt(document.getElementById('1st').value )
+            const second = parseInt(document.getElementById('2nd').value) 
+            const operator = document.getElementById('operators').value
+            const output = document.getElementById('output')
+             let result;
+            if(operator=== '+'){
+                result = first + second 
+            } 
+            else if(operator=== '-'){
+                result = first - second 
+            }
+            else if(operator=== '*'){
+                result = first * second 
+            }
+            else('no operator selected')
+            output.value = result
+        }
+    </script>
+</body>
+</html>
